@@ -1,23 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 import CameraList from './CameraList'
 import React from 'react'
 
 
-export default function Cameras(){
+export default function Camera(){
     const [camera, setCamera] = useState([])
 
 
     useEffect(()=> {
         fetch('http://localhost:3000/cameras')
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => setCamera(data))
+        
 
     }, [])
+
+    console.log(camera)
 
     return <div>
         <h1>Cameras</h1>
         {/* <CameraForm/> */}
-        <CameraList/>
+        <CameraList camera={camera}/>
         {/* <CameraCard/> */}
     </div>
 }

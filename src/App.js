@@ -1,8 +1,7 @@
-
 import './App.css';
 import Navbar from './components/Navbar';
-import Pages from './components/Pages';
 import { useState } from 'react'
+import Pages from './components/Pages';
 
 
 
