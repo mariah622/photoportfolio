@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react'
 import CameraList from './CameraList'
+import CameraForm from './CameraForm'
 import React from 'react'
 
 
@@ -19,7 +20,7 @@ export default function Camera(){
 
     return <div>
         <h1>Cameras</h1>
-        {/* <CameraForm/> */}
+        <CameraForm/>
         <CameraList camera={camera}/>
         {/* <CameraCard/> */}
     </div>
