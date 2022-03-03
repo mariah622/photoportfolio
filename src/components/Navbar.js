@@ -1,7 +1,7 @@
 // navbar component
 
 export default function Navbar({setPage}){
-    return <div class='nav'>
+    return <div className='nav'>
         {/* <button>Home</button>
         <button>About Us</button> */}
         <button onClick={e => setPage('Cameras')}>Cameras</button>
