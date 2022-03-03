@@ -4,7 +4,7 @@ import CameraForm from './CameraForm'
 import React from 'react'
 
 
-export default function Camera(){
+export default function Cameras(){
     const [camera, setCamera] = useState([])
 
 
