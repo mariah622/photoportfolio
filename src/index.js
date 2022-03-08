@@ -6,17 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import{
   BrowserRouter as Router
 } from 'react-router-dom'
-import {applyMiddleware, combineReducers, createStore} from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import cameraReducer from './reducers/cameraReducer.js'
 
 
-const rootReducer = combineReducers({
-  cameras: cameraReducer
-})
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(cameraReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>

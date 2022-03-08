@@ -1,5 +1,4 @@
 // pages component
-
 import Photos from "./photos/Photo";
 import Cameras from "./cameras/Camera";
 

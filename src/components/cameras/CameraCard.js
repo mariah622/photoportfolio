@@ -1,10 +1,10 @@
-import React from 'react'
+// import React from 'react'
 
-export default function CameraCard(props) {
-    console.log(props)
+// export default function CameraCard(props) {
+//     console.log(props)
 
-    return <li>
-        {props.name}
-    </li>
+//     return <li>
+//         {props.name}
+//     </li>
 
-}
+// }
