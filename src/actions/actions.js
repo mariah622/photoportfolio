@@ -1,8 +1,10 @@
-import { GET_PEOPLE } from "../actions/actionTypes";
+import { GET_Cameras } from "../actions/actionTypes";
 
-const getPeople = (cameras) => {
-    return {
-        type: GET_PEOPLE,
-        payload: cameras
-    }
-}
+// const getCameras = (cameras) => {
+//     return {
+//         type: GET_Cameras,
+//         payload: cameras
+//     }
+// }
+
+export fetch

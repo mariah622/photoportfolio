@@ -1,4 +1,4 @@
-import { GET_PEOPLE } from "../actions/actionTypes";
+import { GET_CAMERAS } from "../actions/actionTypes";
 
 export default function cameraReducer (
     state = { photos: []},
@@ -6,7 +6,7 @@ export default function cameraReducer (
   ) {
     switch (action.type) {
   
-      case GET_PEOPLE:
+      case GET_CAMERAS:
         return {
           ...state,
           cameras: action.payload,
