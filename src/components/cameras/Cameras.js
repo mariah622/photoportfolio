@@ -1,7 +1,6 @@
 // import { useState, useEffect, Component} from 'react'
 // import React, { Component } from 'react'
 import React, { Component } from 'react'
-// import CameraList from './CameraList'
 import CameraForm from './CameraForm'
 import { connect } from 'react-redux'
 import { fetchCameras } from '../../actions/actions'
@@ -31,7 +30,7 @@ class Cameras extends Component{
         <h1>Cameras</h1>
         <CameraForm/>
         <ul>
-        {(this.props.cameras ?? []).map(c => <li key={c.id}>{c.name}</li>)}
+        {(this.props.cameras ?? []).map(c => <CameraCard key={c.id}{...c}/>)}
         </ul>
         {/* <CameraList camera={camera}/> */}
         {/* <CameraCard/> */}

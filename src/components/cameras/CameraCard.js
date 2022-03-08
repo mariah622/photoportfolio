@@ -1,10 +1,17 @@
-import React from 'react'
+// import React from 'react'
+import { connect } from 'react-redux'
+import { destroyCamera } from '../../actions/actions'
 
-export default function CameraCard(props) {
-    console.log(props)
+function CameraCard({id, name, destroyCamera}) {
+    return (
+        <>
+         <li>{name}</li>
+         <button onClick = { ()=> destroyCamera(id)}>X</button>
 
-    return <li>
-        {props.name}
-    </li>
+        </>
 
+    )
+  
 }
+
+export default connect(null, {destroyCamera })(CameraCard)

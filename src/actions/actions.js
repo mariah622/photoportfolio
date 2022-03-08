@@ -1,18 +1,4 @@
-import { GET_CAMERAS, ADD_CAMERA } from "./actionTypes";
-
-// export const getCameras = (cameras) => {
-//     return {
-//         type: GET_CAMERAS,
-//         payload: cameras
-//     }
-// }
-
-// const addCamera = camera => {
-//     return{
-//         type: ADD_CAMERA,
-//         payload: camera
-//     }
-// }
+import { GET_CAMERAS, ADD_CAMERA, DELETE_CAMERA } from "./actionTypes";
 
 export const fetchCameras = () => {
     return (dispatch) => {
@@ -39,4 +25,16 @@ export const createCamera = (camera) => {
 
     //console logging show data. there may be problem with the dispatch
     
+}
+
+export const destroyCamera = (id) => {
+    // type: DELETE_CAMERA, payload: id
+
+    return dispatch => {
+        fetch(`http://localhost:3000/cameras/${id}`, {
+            method: "DELETE",
+        })
+        .then(r => dispatch({type: DELETE_CAMERA, payload: id}))
+    }
+
 }
