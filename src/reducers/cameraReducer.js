@@ -1,4 +1,4 @@
-import { GET_CAMERAS } from "../actions/actionTypes";
+import { GET_CAMERAS, ADD_CAMERA } from "../actions/actionTypes";
 
 const initialState = {
   cameras:[]
@@ -10,6 +10,11 @@ function cameraReducer(state = initialState, action){
       return {
         ...state,
         cameras: action.payload
+      }
+
+    case ADD_CAMERA:
+      return {
+        cameras: [...state.cameras, action.payload]
       }
 
     default:

@@ -1,6 +1,6 @@
 // pages component
 import Photos from "./photos/Photo";
-import Cameras from "./cameras/Camera";
+import Cameras from "./cameras/Cameras";
 
 import {
     Routes, 

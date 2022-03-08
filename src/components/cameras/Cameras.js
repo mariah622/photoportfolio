@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import CameraForm from './CameraForm'
 import { connect } from 'react-redux'
 import { fetchCameras } from '../../actions/actions'
+import CameraCard from './CameraCard';
 
 class Cameras extends Component{
   // const [camera, setCamera] = useState([])
@@ -30,7 +31,7 @@ class Cameras extends Component{
         <h1>Cameras</h1>
         <CameraForm/>
         <ul>
-          {this.props.cameras.map(c => <li key={c.id}>{c.name}</li>)}
+        {(this.props.cameras ?? []).map(c => <li key={c.id}>{c.name}</li>)}
         </ul>
         {/* <CameraList camera={camera}/> */}
         {/* <CameraCard/> */}

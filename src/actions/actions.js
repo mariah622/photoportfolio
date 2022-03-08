@@ -1,9 +1,16 @@
-import { GET_CAMERAS } from "./actionTypes";
+import { GET_CAMERAS, ADD_CAMERA } from "./actionTypes";
 
 // export const getCameras = (cameras) => {
 //     return {
 //         type: GET_CAMERAS,
 //         payload: cameras
+//     }
+// }
+
+// const addCamera = camera => {
+//     return{
+//         type: ADD_CAMERA,
+//         payload: camera
 //     }
 // }
 
@@ -14,6 +21,22 @@ export const fetchCameras = () => {
         .then(data => dispatch({type: GET_CAMERAS, payload:data}))
 
     }
-    
+}
 
+export const createCamera = (camera) => {
+    return dispatch => {
+        fetch('http://localhost:3000/cameras', {
+            method: 'POST',
+            headers: {
+              'Content-Type': "application/json",
+              'Accept': "application/json"
+            },
+            body: JSON.stringify(camera)
+        })
+        .then(resp => resp.json())
+        .then(camera => dispatch({type: ADD_CAMERA, payload: camera}))
+    }
+
+    //console logging show data. there may be problem with the dispatch
+    
 }
