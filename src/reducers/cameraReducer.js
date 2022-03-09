@@ -1,4 +1,4 @@
-import { GET_CAMERAS, ADD_CAMERA, DELETE_CAMERA } from "../actions/actionTypes";
+import { GET_CAMERAS, ADD_CAMERA, EDIT_CAMERA, DELETE_CAMERA } from "../actions/actionTypes";
 
 const initialState = {
   cameras:[]
@@ -15,7 +15,21 @@ function cameraReducer(state = initialState, action){
 
     case ADD_CAMERA:
       return {
+        ...state, 
         cameras: [...state.cameras, action.payload]
+      }
+    
+    case EDIT_CAMERA:
+      idx = state.cameras.findIndex(c => c.id === action.payload.id)
+
+      return {
+        ...state, 
+        cameras: [
+          ...state.cameras.slice(0, idx),
+          action.payload,
+          ...state.cameras.slice(idx + 1)
+        ]
+
       }
     
     case DELETE_CAMERA:
@@ -31,6 +45,8 @@ function cameraReducer(state = initialState, action){
         ]
 
       }
+
+
 
     default:
       return state;

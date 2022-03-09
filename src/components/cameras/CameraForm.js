@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { createCamera } from '../../actions/actions'
+import { createCamera, updateCamera } from '../../actions/actions'
+
 
 
 class CameraForm extends Component {
   state = {
-    name: ""
+    name: this.props.name ? this.props.name : ""
+    // setting name now based if we have that name or not. This means its either coming from edit button or create button
   }
   handleChange = e => {
     this.setState({
@@ -15,7 +17,17 @@ class CameraForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createCamera(this.state)
+
+    if(this.props.id){
+      this.props.updateCamera({...this.state, id: this.props.id})
+      this.props.toggleEdit()
+
+    } else {
+      this.props.createCamera(this.state)
+      // dispatch create action
+
+    }
+
 
     this.setState({name: ""})
   }
@@ -29,13 +41,13 @@ class CameraForm extends Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <input type="submit"/>
+        <input type="submit" value={this.props.id ? 'Edit' : "Create"} />
       </form>
     )
   }
 }
 
-export default connect(null, { createCamera })(CameraForm); 
+export default connect(null, { createCamera, updateCamera })(CameraForm); 
 
 
 // import { connect } from 'react-redux';

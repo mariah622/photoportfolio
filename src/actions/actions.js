@@ -1,4 +1,4 @@
-import { GET_CAMERAS, ADD_CAMERA, DELETE_CAMERA } from "./actionTypes";
+import { GET_CAMERAS, ADD_CAMERA, EDIT_CAMERA, DELETE_CAMERA } from "./actionTypes";
 
 export const fetchCameras = () => {
     return (dispatch) => {
@@ -22,10 +22,25 @@ export const createCamera = (camera) => {
         .then(resp => resp.json())
         .then(camera => dispatch({type: ADD_CAMERA, payload: camera}))
     }
-
-    //console logging show data. there may be problem with the dispatch
-    
 }
+
+export const updateCamera = (camera) => {
+    return dispatch => {
+        fetch(`http://localhost:3000/cameras/${camera.id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': "application/json",
+                'Accept': "application/json"
+            },
+            body: JSON.stringify(camera)
+        })
+        .then(resp => resp.json())
+        .then(c => dispatch({type: EDIT_CAMERA, payload: camera}))
+
+    } 
+
+}
+
 
 export const destroyCamera = (id) => {
     // type: DELETE_CAMERA, payload: id
