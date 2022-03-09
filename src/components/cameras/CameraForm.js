@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { createCamera, updateCamera } from '../../actions/actions'
+import { createCamera, updateCamera } from '../../actions/cameraActions'
 
 
 

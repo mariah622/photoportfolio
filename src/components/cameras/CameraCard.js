@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { destroyCamera } from '../../actions/actions'
+import { destroyCamera } from '../../actions/cameraActions'
 import CameraForm from './CameraForm'
 
 class CameraCard extends React.Component{

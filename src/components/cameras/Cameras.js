@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import CameraForm from './CameraForm'
 import { connect } from 'react-redux'
-import { fetchCameras } from '../../actions/actions'
+import { fetchCameras } from '../../actions/cameraActions'
 import CameraCard from './CameraCard';
 
 class Cameras extends Component{
@@ -50,7 +50,7 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state) {
   return {
-    cameras: state.cameras
+    cameras: state.cameraReducer.cameras
   }
 }
 
