@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { destroyCamera } from '../../actions/cameraActions'
 import CameraForm from './CameraForm'
+import PopComp from '../reviews/ReviewPopUps/PopComp'
 
 class CameraCard extends React.Component{
     state = {
@@ -14,20 +15,28 @@ class CameraCard extends React.Component{
 
     render(){
         return (
-            <>
-             <li>
-                 <h1>{this.props.name}</h1>
-                 {/* <p>{overview}</p> */}
-            </li>
-             <button onClick = { ()=> this.props.destroyCamera(this.props.id)}>X</button>
-             <button onClick={this.toggleEdit}>{this.state.editing ? 'Cancel' : 'Edit'}</button>
-             {this.state.editing ? <CameraForm 
-                id={this.props.id} 
-                name={this.props.name}  
-                toggleEdit={this.toggleEdit}
-            /> : null}
+            <div>
+                <li>
+                    <h1>{this.props.brand}</h1>
+                    <h3>Model: {this.props.name}</h3>
+                    <p>Body Type: {this.props.camera_type} </p>
+                    <p>Overview: {this.props.overview}</p>
+                </li>
+                
+                <PopComp/>
+                <button onClick = { ()=> this.props.destroyCamera(this.props.id)}>X</button>
+                <button onClick={this.toggleEdit}>{this.state.editing ? 'Cancel' : 'Edit'}</button>
+                
+                {this.state.editing ? <CameraForm 
+                    id={this.props.id} 
+                    brand={this.props.brand}
+                    name={this.props.name} 
+                    camera_type={this.props.camera_type} 
+                    overview={this.props.overview}
+                    toggleEdit={this.toggleEdit}
+                /> : null}
     
-            </>
+            </div>
     
         )
 

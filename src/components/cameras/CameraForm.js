@@ -6,12 +6,33 @@ import { createCamera, updateCamera } from '../../actions/cameraActions'
 
 class CameraForm extends Component {
   state = {
-    name: this.props.name ? this.props.name : ""
+    brand: this.props.brand ? this.props.brand : "",
+    name: this.props.name ? this.props.name : "",
+    camera_type: this.props.camera_type ? this.props.camera_type : "",
+    overview: this.props.overview ? this.props.overview: ""
     // setting name now based if we have that name or not. This means its either coming from edit button or create button
   }
-  handleChange = e => {
+  handleNameChange = e => {
     this.setState({
       name: e.target.value
+    })
+  }
+
+  handleBrandChange = e => {
+    this.setState({
+      brand: e.target.value
+    })
+  }
+
+  handleTypeChange = e => {
+    this.setState({
+      camera_type: e.target.value
+    })
+  }
+
+  handleOverviewChange = e => {
+    this.setState({
+      overview: e.target.value
     })
   }
 
@@ -29,7 +50,7 @@ class CameraForm extends Component {
     }
 
 
-    this.setState({name: ""})
+    this.setState({name: "", brand: '', camera_type: '', overview: ''})
   }
 
   render() {
@@ -37,9 +58,28 @@ class CameraForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <input 
           type="text" 
+          placeholder='brand' 
+          value={this.state.brand}
+          onChange={this.handleBrandChange}
+        />
+        <input 
+          type="text" 
           placeholder='name' 
           value={this.state.name}
-          onChange={this.handleChange}
+          onChange={this.handleNameChange}
+        />
+ 
+         <input 
+          type="text" 
+          placeholder='type' 
+          value={this.state.camera_type}
+          onChange={this.handleTypeChange}
+        />
+        <input 
+          type="text" 
+          placeholder='overview' 
+          value={this.state.overview}
+          onChange={this.handleOverviewChange}
         />
         <input type="submit" value={this.props.id ? 'Edit' : "Create"} />
       </form>
