@@ -6,7 +6,7 @@ class PhotoCard extends React.Component{
    
     render(){
         return (
-            <>
+            <div className='container2'>
           
              <li >
                  <img src={this.props.image} alt='' />
@@ -22,7 +22,7 @@ class PhotoCard extends React.Component{
                  <p>{this.props.likes}</p>
             </li>
     
-            </>
+            </div>
     
         )
 

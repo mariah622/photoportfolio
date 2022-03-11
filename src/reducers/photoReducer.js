@@ -19,7 +19,7 @@ function photoReducer(state = initialState, action){
     
     
     case DELETE_PHOTO:
-        idx = state.photos.findIndex(p => p.id === action.payload.id)
+        idx = state.photos.findIndex(p => p.id === action.payload)
         return {...state,
             photos: [
                 ...state.photos.slice(0,idx),

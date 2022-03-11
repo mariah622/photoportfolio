@@ -1,6 +1,8 @@
 // pages component
 import Photos from "./photos/Photo";
-import Cameras from "./cameras/Cameras";
+import Cameras from './cameras/Cameras'
+import Homepage from './Homepage'
+import Aboutus from "./Aboutus";
 
 import {
     Routes, 
@@ -9,28 +11,11 @@ import {
 
 export default function Pages({page}) {
 
-    // function renderPage(){
-    //     switch(page) {
-    //         case "Cameras":
-    //             return <Cameras/>
-            
-    //         case "Photos":
-    //             return <Photos/>
-            
-    //         default:
-    //             break;
-
-    //     }
-    // }
-    // return <div>
-    //     {renderPage()}
-
-    // </div>
-
     return <Routes>
         <Route path='cameras' element={<Cameras/>}/>
         <Route path='photos' element={<Photos/>}/>
-        {/* <Route/> */}
+        <Route path='/' element={<Homepage/>}/>
+        <Route path='/Aboutus' element={<Aboutus/>}/>
 
     </Routes>
 

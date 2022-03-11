@@ -25,7 +25,6 @@ export const createPhoto = (photo) => {
 }
 
 export const destroyPhoto = (id) => {
-    // type: DELETE_Photo, payload: id
 
     return dispatch => {
         fetch(`http://localhost:3000/photos/${id}`, {
