@@ -7,7 +7,7 @@ A tool for showcasing the specs of different cameras, images, and infromation ab
 This app is meant to run with a custom backend, see link: https://github.com/mariah622/photoportfolio_backend. Follow instructions to create backend before continuing as if you do not run the backend, no information will display .
 
 
-First, git clone photoportfolio
+First, git clone the respository and cd into photoportfolio.
 
 Then, type 'npm install' to install dependencies.
 
