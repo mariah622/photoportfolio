@@ -1,6 +1,6 @@
 # Photo Portfolio
 
-A tool for showcasing the specs of different cameras, images, and infromation about some photographers.  
+A tool for showcasing the specs of different cameras, images, and information about some photographers.  
 
 ## Installation
 
