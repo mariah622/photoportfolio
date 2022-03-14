@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPhotos } from '../../actions/photoActions'
-import PhotoForm from './PhotoForm'
-import PhotoCard from './PhotoCard'
+import { fetchPhotos } from '../actions/photoActions'
+import PhotoForm from '../components/photos/PhotoForm'
+import PhotoCard from '../components/photos/PhotoCard'
 
 class Photos extends Component{
     componentDidMount(){

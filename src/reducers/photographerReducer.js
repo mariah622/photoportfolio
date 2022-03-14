@@ -1,21 +1,21 @@
-import { GET_REVIEWS, ADD_REVIEW } from "../actions/actionTypes";
+import { GET_PHOTOGRAPHERS, ADD_PHOTOGRAPHER } from "../actions/actionTypes";
 
 const initialState = {
-  reviews:[]
+  photographers:[]
 }
 
 function reviewReducer(state = initialState, action){
   switch(action.type) {
-    case GET_REVIEWS:
+    case GET_PHOTOGRAPHERS:
       return {
         ...state,
-        reviews: action.payload
+        photographers: action.payload
       }
 
-    case ADD_REVIEW:
+    case ADD_PHOTOGRAPHER:
       return {
         ...state, 
-        reviews: [...state.reviews, action.payload]
+        photographers: [...state.photographers, action.payload]
       }
 
     default:

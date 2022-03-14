@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { createCamera } from '../../actions/cameraActions'
 
-
-
 class CameraForm extends Component {
   state = {
-    brand: this.props.brand,
-    name: this.props.name,
-    camera_type: this.props.camera_type,
-    overview: this.props.overview
-    // setting name now based if we have that name or not. This means its either coming from edit button or create button
+    brand: "",
+    name: "",
+    camera_type: "",
+    overview: ""
+  
   }
+  
   handleNameChange = e => {
     this.setState({
       name: e.target.value
@@ -71,7 +70,7 @@ class CameraForm extends Component {
           value={this.state.overview}
           onChange={this.handleOverviewChange}
         />
-        <input type="submit"  />
+        <input type="submit" />
       </form>
     )
   }

@@ -9,13 +9,11 @@ import{
 import {applyMiddleware, createStore} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
-// import cameraReducer from './reducers/cameraReducer.js'
-// import photoReducer from './reducers/photoReducer.js';
 import rootReducer from './reducers/index';
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
-console.log(store.getState)
+// console.log(store.getState)
 
 
 ReactDOM.render(

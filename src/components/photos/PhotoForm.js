@@ -6,8 +6,8 @@ import { createPhoto } from '../../actions/photoActions'
 
 class PhotoForm extends Component {
   state = {
-    image: this.props.image ? this.props.image : "",
-    caption: this.props.caption ? this.props.caption: "",
+    image:  "",
+    caption: ""
     // likes: this.props.likes ? this.props.likes : ""
   }
 

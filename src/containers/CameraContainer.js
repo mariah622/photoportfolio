@@ -1,9 +1,8 @@
-
-import { Route } from 'react-router-dom';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchCameras } from '../../src/actions/cameraActions'
-import Camera from '../components/cameras/Cameras'
+import CameraForm from '../components/cameras/CameraForm'
+import CameraCard from '../components/cameras/CameraCard'
 
 
 class CameraContainer extends Component{
@@ -15,9 +14,14 @@ class CameraContainer extends Component{
 
   render() {
     return (
-        <div>
-            <Route path='/cameras'  element={<Camera cameras={this.props.cameras} />} />
-        </div>
+      <div className='maindiv'>
+        <h1>Cameras</h1>
+        <CameraForm/>
+        <ul>
+        {(this.props.cameras ?? []).map(c => <CameraCard key={c.id}{...c}/>)}
+        </ul>
+
+    </div>
         
 
     )
