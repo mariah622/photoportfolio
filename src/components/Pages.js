@@ -18,7 +18,7 @@ export default function Pages({page}) {
         <Route path='photos' element={<PhotoContainer/>}/>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/Aboutus' element={<Aboutus/>}/>
-        <Route path='/reviews' element={<Reviews/>}/>
+        {/* <Route path='/reviews' element={<Reviews/>}/> */}
         <Route path='/photographers' element={<PhotographerContainer/>}/>
      
 

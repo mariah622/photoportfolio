@@ -8,7 +8,7 @@ export default function Navbar(){
         <Link to='/Photographers'>Photographers</Link>
         <Link to='/Cameras'>Cameras</Link>
         <Link to='/Photos'>Photos</Link>
-        <Link to='/Reviews'>Reviews</Link>
+        {/* <Link to='/Reviews'>Reviews</Link> */}
       
 
 

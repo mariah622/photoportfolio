@@ -11,15 +11,15 @@ class PhotoCard extends React.Component{
              <li >
                  <img src={this.props.image} alt='' />
                  <p>{this.props.caption}</p>
-                 <button className = 'likeBtn'>
+                 {/* <button className = 'likeBtn'>
                     <i className="fas fa-heart fa-lg" style={{ color: "white" }}></i>
-                 </button>
+                 </button> */}
                  <br></br>
 
                  <br></br>
                  <button onClick = { ()=> this.props.destroyPhoto(this.props.id)}>X</button>
 
-                 <p>{this.props.likes}</p>
+                 <p>Likes: {this.props.likes}</p>
             </li>
     
             </div>

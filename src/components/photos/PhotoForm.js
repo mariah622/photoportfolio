@@ -7,9 +7,10 @@ import { createPhoto } from '../../actions/photoActions'
 class PhotoForm extends Component {
   state = {
     image:  "",
-    caption: ""
-    // likes: this.props.likes ? this.props.likes : ""
+    caption: "",
+    likes: ""
   }
+
 
   handleImageChange = e => {
     this.setState({
@@ -20,6 +21,11 @@ class PhotoForm extends Component {
   handleCaptionChange = e => {
     this.setState({
       caption: e.target.value
+    })
+  }
+  handleLikesChange = e => {
+    this.setState({
+      likes: e.target.value
     })
   }
 
@@ -44,7 +50,13 @@ class PhotoForm extends Component {
           value={this.state.caption}
           onChange={this.handleCaptionChange}
         />
-        <input type="submit" value={this.props.id}  />
+        <input 
+          type="text" 
+          placeholder='likes' 
+          value={this.state.likes}
+          onChange={this.handleLikesChange}
+        />
+        <input type="submit"  />
       </form>
     )
   }
